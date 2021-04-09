@@ -54,3 +54,12 @@
     - name: PRINT OUT WEB VIP FOR F5
       debug:
         msg: "The VIP (Virtual IP) is https://{{ansible_host}}"
+        
+    - name: Create - Certificate and Key Pairs
+      bigip_ssl_key_cert:
+        key_content: "{{ twr_var_f5_key }}"
+        key_name: "twr_{{ ib_host_fqdn }}_https_ssl"
+        cert_content: "{{ twr_var_f5_cert }}"
+        cert_name: "twr_{{ ib_host_fqdn }}_https_ssl"
+        state: present
+        provider: "{{ provider }}"
