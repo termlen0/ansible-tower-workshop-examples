@@ -57,9 +57,9 @@
         
     - name: Create - Certificate and Key Pairs
       bigip_ssl_key_cert:
-        key_content: "{{ twr_var_f5_key }}"
+        key_content:  "{{ lookup('file', twr_var_f5_key) }}"
         key_name: "twr_{{ ib_host_fqdn }}_https_ssl"
-        cert_content: "{{ twr_var_f5_cert }}"
+        cert_content: "{{ lookup('file', twr_var_f5_cert) }}"
         cert_name: "twr_{{ ib_host_fqdn }}_https_ssl"
         state: present
         provider: "{{ provider }}"
