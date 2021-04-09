@@ -57,8 +57,8 @@
         
     - debug: 
         msg: |
-        "{{ twr_var_f5_key }}"
-        "{{ twr_var_f5_cert }}"
+          "{{ twr_var_f5_key }}"
+          "{{ twr_var_f5_cert }}"
         
     - name: Create - Certificate and Key Pairs
       bigip_ssl_key_cert:
